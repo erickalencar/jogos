@@ -1,0 +1,28 @@
+
+    <h3>
+    Novo progresso</h3>   
+    <form action="/progressos/incluir"  method="post">
+        <input type="hidden" ID="pro_id" name="pro_id" />
+        <input type="hidden" ID="imgBusca" name="pro_logo" />
+        <input type="hidden" ID="imgIni" name="imgIni" value="0" />   
+        <div id='conteudo' style="display: block;">   
+            <div id="prologo" class="itemForm" style="float: left; width: 200px; height: 300px">
+                <img id="imagemBusca" src="" width="150px" />
+            </div>
+            <div class="itemForm">
+                Nome            
+                <input type="text" ID="pla_nome" name="pro_nome" />
+            </div>            
+            <div class="itemForm" style="width:650px">
+                <div id="resultado"></div>
+                <img ID="imgCapaJogo" Width="100px" /> 
+                <input type="Button" ID="btnCApa"  Value="Carregar imagem" OnClick="carregaImagem(document.getElementById('pla_nome').value,'logo',
+                parseInt(document.getElementById('imgIni').value)+parseInt(10));" />
+            </div>  
+        </div>   
+        <div class="command">
+            <input type="Submit" ID="btnSalvar"  Value="Salvar" OnClick="" />
+            <input type="Button" ID="btnCancelar"  Value="Cancelar"  />
+        </div>        
+    </form>
+<br />

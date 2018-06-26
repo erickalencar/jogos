@@ -1,0 +1,91 @@
+﻿#spFiltros {
+	margin-top:20px;
+	padding:0;
+	display:block;
+	font-size:10pt;		
+}
+
+#lbCount {
+	margin-top:20px;
+	padding:0;
+	display:block;
+	font-size:10pt;		
+}
+
+/* First Level UL List */
+#accordion {
+	margin:0;
+	margin-top:10px;
+	padding:0;	
+	list-style:none;
+}
+	
+	#accordion li {
+		/*width:267px;*/
+	}
+	
+	#accordion li a {
+		display: block;
+		/*width: 268px;*/
+		/*height: 43px;	*/
+		/*text-indent:-999em;*/
+		outline:none;
+		font-size:10pt;
+	}
+		
+	/* Using CSS Sprite for menu item 
+	#accordion li a.popular {
+		background:url(menu.jpg) no-repeat 0 0;	
+	}
+
+	#accordion li a.popular:hover, .popularOver {
+		background:url(menu.jpg) no-repeat -268px 0 !important;	
+	}
+		
+	#accordion li a.category {
+		background:url(menu.jpg) no-repeat 0 -43px;	
+	}
+
+	#accordion li a.category:hover, .categoryOver {
+		background:url(menu.jpg) no-repeat -268px -43px !important;	
+	}
+		
+	#accordion li a.comment {
+		background:url(menu.jpg) no-repeat 0 -86px;	
+	}
+
+	#accordion li a.comment:hover, .commentOver {
+		background:url(menu.jpg) no-repeat -268px -86px !important;	
+	}*/
+		
+		
+	/* Second Level UL List*/
+	#accordion ul {
+		/*background:url(bg.gif) repeat-y 0 0;*/
+		/*width:268px;*/
+		margin:0;
+		padding:0;
+		display:none;	
+		list-style:none;
+	}
+		
+		#accordion ul li {
+			/*height:30px;*/
+		}
+			
+		/* styling of submenu item */
+		#accordion ul li a {
+			/*width:240px;*/
+			height:25px;
+			margin-left:15px;
+			padding-top:5px;
+			/*border-bottom: 1px dotted #777;*/
+			text-indent:0;
+			color:#ccc;
+			text-decoration:none;
+		}
+
+		/* remove border bottom of the last item */
+		#accordion ul li a.last {
+			border-bottom: none;
+		}	

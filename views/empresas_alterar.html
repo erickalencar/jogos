@@ -1,0 +1,41 @@
+<script language="javascript">
+    function excluirEmpresa(emp_id){
+        if(confirm('Deseja excluir a empresa?')){
+            document.location.href = '/empresas/{$empresa.EMP_ID}/excluir/';
+        }
+    }
+</script>
+    <div id="submenu">
+        <ul>            
+            <li><a href="/empresas/">Lista</a></li>
+            <li><a href="#" onclick="excluirEmpresa({$empresa.EMP_ID})">Excluir</a></li>
+        </ul>
+    </div>
+    <h3>
+    Novo jogo</h3>   
+    <form action="/empresas/incluir"  method="post">
+        <input type="hidden" ID="emp_id" name="emp_id" value={$empresa.EMP_ID} />
+        <input type="hidden" ID="imgBusca" name="emp_logo" value={$empresa.EMP_LOGO} />
+        <input type="hidden" ID="imgIni" name="imgIni" value="0" />   
+        <div id='conteudo' style="display: block;">   
+            <div id="emplogo" class="itemForm" style="float: left; width: 200px; height: 300px">
+                <img id="imagemBusca" src={$empresa.EMP_LOGO} width="150px" />
+            </div>
+            <div class="itemForm">
+                Nome            
+                <input type="text" ID="emp_nome" name="emp_nome" value="{$empresa.EMP_NOME}" />
+            </div>            
+            <div class="itemForm">
+                <div id="resultado"></div>
+                <img ID="imgCapaJogo" Width="100px" /> 
+                <input type="Button" ID="btnCApa"  Value="Carregar imagem" OnClick="carregaImagem(document.getElementById('emp_nome').value,'logo',
+                parseInt(document.getElementById('imgIni').value)+parseInt(10));" />
+            </div>  
+        </div>   
+        <div class="command">
+            <input type="Submit" ID="btnSalvar"  Value="Salvar" OnClick="" />
+            <input type="Button" ID="btnCancelar"  Value="Cancelar"  />
+        </div>
+             
+    </form>
+

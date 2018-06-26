@@ -7,7 +7,7 @@ class Sql {
 	const HOSTNAME = "(local)";
 	const USERNAME = "";
 	const PASSWORD = "";
-	const DBNAME = "jogos";
+	const DBNAME = "erick";
 
 	private $conn;
 
@@ -26,7 +26,6 @@ class Sql {
 	{
 
 		foreach ($parameters as $key => $value) {
-			
 			$this->bindParam($statement, $key, $value);
 
 		}
@@ -36,7 +35,7 @@ class Sql {
 	private function bindParam($statement, $key, $value)
 	{
 
-		$statement->bindParam($key, $value);
+		$statement->bindParam($key, $value);			
 
 	}
 
@@ -57,9 +56,7 @@ class Sql {
 		$stmt = $this->conn->prepare($rawQuery);
 
 		$this->setParams($stmt, $params);
-
 		$stmt->execute();
-
 		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
 	}

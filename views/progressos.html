@@ -1,0 +1,19 @@
+        <div id="submenu">
+            <ul>                
+                <li><a href="/progressos/incluir/">Incluir</a></li>
+            </ul>
+        </div>    
+        <div id='conteudo' style="display: block; float: left;" >
+        {loop="$progressos"}
+            <div class="item">
+                <h5>{$value.PRO_NOME}</h5>                
+                <div class="product-hover">
+                    <a href="/progressos/{$value.PRO_ID}/alterar" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Alterar</a>
+                    <a href="/progressos/{$value.PRO_ID}" class="view-details-link"><i class="fa fa-link"></i> Ver detalhes</a>
+                </div>
+            </div>
+        {/loop}
+        </div>
+
+    
+    

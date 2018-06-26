@@ -1,0 +1,17 @@
+﻿
+div.form
+{
+    margin: 0 0;
+    padding-bottom: 30px;
+    width: 600px;
+}
+div.form .label
+{
+    display: block;
+}
+
+div.form .command
+{
+    text-align: right;
+}
+

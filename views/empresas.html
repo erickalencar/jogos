@@ -1,0 +1,20 @@
+        <div id="submenu">
+            <ul>                
+                <li><a href="/empresas/incluir/">Incluir</a></li>
+            </ul>
+        </div>    
+        <div id='conteudo' style="display: block; float: left;" >
+        {loop="$empresas"}
+            <div class="item">
+                <h5>{$value.EMP_NOME}</h5>
+                <img  Width="140px" src="{$value.EMP_LOGO}" />
+                <div class="product-hover">
+                    <a href="/empresas/{$value.EMP_ID}/alterar" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Alterar</a>
+                    <a href="/empresas/{$value.EMP_ID}" class="view-details-link"><i class="fa fa-link"></i> Ver detalhes</a>
+                </div>
+            </div>
+        {/loop}
+        </div>
+
+    
+    

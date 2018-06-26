@@ -1,0 +1,32 @@
+<script language="javascript">
+    function excluirJogo(jogo_id){
+        if(confirm('Deseja excluir o jogo?')){
+            document.location.href = '/jogos/{$jogo.jogo_id}/excluir/';
+        }
+    }
+</script>
+    <div id="submenu">
+        <ul>            
+            <li><a href="/">Lista</a></li>
+            <li><a href="/jogos/{$jogo.jogo_id}/alterar/">Alterar</a></li>
+            <li><a href="#" onclick="excluirJogo({$jogo.jogo_id})">Excluir</a></li>
+        </ul>
+    </div>      
+        <div id='conteudo' style="display: block;">   
+            <h3>{$jogo.jogo_nome}</h3> 
+            <div id="jogocapa" class="itemForm" style="float: left; width: 200px; height: 300px">
+                <img id="imgjogocapa" src={$jogo.jogo_capa} width="150px" />
+            </div>           
+            <div class="itemForm">
+                Plataforma: {$plataforma.PLA_NOME}
+            </div>            
+            <div class="itemForm">
+                Publisher: {$publisher.EMP_NOME}                    
+            </div>
+            <div class="itemForm">
+                Desenvolvedora: {$desenvolvedora.EMP_NOME}
+            </div>
+            <div class="itemForm">
+                Progresso: {$progresso.PRO_NOME}
+            </div>              
+        </div>

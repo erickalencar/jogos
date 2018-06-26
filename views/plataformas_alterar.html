@@ -1,0 +1,41 @@
+<script language="javascript">
+    function excluirPlataforma(pla_id){
+        if(confirm('Deseja excluir a plataforma?')){
+            document.location.href = '/plataformas/{$plataforma.PLA_ID}/excluir/';
+        }
+    }
+</script>
+    <div id="submenu">
+        <ul>            
+            <li><a href="/plataformas/">Lista</a></li>
+            <li><a href="#" onclick="excluirPlataforma({$plataforma.PLA_ID})">Excluir</a></li>
+        </ul>
+    </div>
+    <h3>
+    Plataforma</h3>   
+    <form action="/plataformas/incluir"  method="post">
+        <input type="hidden" ID="pla_id" name="pla_id" value={$plataforma.PLA_ID} />
+        <input type="hidden" ID="imgBusca" name="pla_logo" value={$plataforma.PLA_LOGO} />
+        <input type="hidden" ID="imgIni" name="imgIni" value="0" />   
+        <div id='conteudo' style="display: block;">   
+            <div id="emplogo" class="itemForm" style="float: left; width: 200px; height: 300px">
+                <img id="imagemBusca" src={$plataforma.PLA_LOGO} width="150px" />
+            </div>
+            <div class="itemForm">
+                Nome            
+                <input type="text" ID="pla_nome" name="pla_nome" value="{$plataforma.PLA_NOME}" />
+            </div>            
+            <div class="itemForm">
+                <div id="resultado"></div>
+                <img ID="imgCapaJogo" Width="100px" /> 
+                <input type="Button" ID="btnCApa"  Value="Carregar imagem" OnClick="carregaImagem(document.getElementById('pla_nome').value,'logo',
+                parseInt(document.getElementById('imgIni').value)+parseInt(10));" />
+            </div>  
+        </div>   
+        <div class="command">
+            <input type="Submit" ID="btnSalvar"  Value="Salvar" OnClick="" />
+            <input type="Button" ID="btnCancelar"  Value="Cancelar"  />
+        </div>
+             
+    </form>
+

@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\erick\\php-classes\\src"
+            "Erick\\": "vendor\\erick\\php-classes\\src"
         }
     }
 }

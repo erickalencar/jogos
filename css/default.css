@@ -1,0 +1,281 @@
+﻿@import url('form.css');
+@import url('filtros.css');
+@import url('../js/jquery.autocomplete.css');
+html, body, form
+{
+	height: 100%;
+}
+body
+{
+    font-family: Tahoma, Verdana, Arial, Sans-Serif, Times New Roman;
+    padding: 0;
+    margin: 0;
+}
+#geral
+{
+	position: relative;
+	min-height: 100%;
+}
+* html #geral
+{
+	height: 100%;
+	
+}
+#cabecalho
+{
+    background: #f09942;
+    height: 50px;
+    line-height: 50px;
+	padding: 5px;
+}
+#cabecalho h1
+{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+#cabecalho h1#logo
+{
+    text-transform: uppercase;
+}
+#menu ul
+{
+    overflow: auto;
+    background-color: #353535;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menu ul li
+{
+    float: left;
+}
+#menu ul li a
+{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding: 5px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+#menu ul li a:hover
+{
+    color: #353535;
+    background: #f09942;
+    text-decoration: underline;
+}
+#conteudo
+{
+    clear: both;
+    margin: 0 0 0 10px;
+    padding-bottom: 65px;
+}
+
+.item
+{
+	display: block;
+	position: relative;
+	float: left;
+    width: 150px;
+	height: 200px;
+	overflow: hidden;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	border-bottom:1px solid #BBB;
+}
+
+h5
+{
+padding: 0;
+margin: 0;
+}
+
+.itemForm
+{
+	display: block;
+	position: relative;
+	float: left;
+    width: 330px;
+	height: 50px;
+}
+
+.command
+{
+    text-align: center;
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100px;
+}
+
+
+#submenu ul
+{
+    overflow: auto;
+    background-color: #EEEEEE;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#submenu ul li
+{
+    float: left;
+}
+#submenu ul li a
+{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 20px;
+    color: #000;
+    text-decoration: none;
+}
+#submenu ul li a:hover
+{
+    color: #000;
+    background: #999;
+    text-decoration: underline;
+}
+
+#menuBusca ul
+{
+    overflow: auto;
+    background-color: #F9F9F9;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menuBusca ul li
+{
+    float: left;
+	font-size: 10px;
+	text-decoration: none;
+}
+#menuBusca ul li a
+{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 20px;
+    color: #000;
+    text-decoration: none;
+}
+#menuBusca ul li a:hover
+{
+    color: #000;
+    background: #999;
+    text-decoration: underline;
+}
+
+.pla_qtd
+{
+    color: #000;
+    background: #E67E22;
+	height: 15px;
+	margin: 0px;
+	padding: 0px 2px 0px 0px;
+	text-align: right;
+	
+	line-height: 15px;
+}
+
+.product-hover a i.fa {
+    margin-right: 5px;
+}
+.product-hover a.add-to-cart-link {top: -25%;}
+.product-hover a.view-details-link { bottom: -35%;}
+
+.item:hover {}
+.item:hover .product-hover a.add-to-cart-link {top: 25%;}
+.item:hover .product-hover a.view-details-link {bottom: 25%;}
+.item:hover .product-hover:after{left: 0}
+
+.product-hover {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 95%;overflow: hidden;	
+}
+.product-hover:after {
+  background: none repeat scroll 0 0 #000;
+  content: "";
+  height: 100%;
+  left: -100%;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  width: 100%;transition: .4s;
+}
+.product-hover a {
+    background: none repeat scroll 0 0 #e67e22;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    left: 10%;
+    margin: 0;
+    padding: 3px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;    
+    width: 80%;z-index: 99;transition: .4s;
+}
+.product-hover a:hover {
+  background: #000;
+  text-decoration: none;border-color: #444;
+}
+
+#menuFiltros
+{
+	display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 5px 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+#menuOpcoes
+{
+    float:right;
+    width:140px;
+    /*height:300px;*/
+    padding:5px;
+    vertical-align:middle;
+    border:solid 1px #E6E6E6;
+}
+
+label
+{    
+    display:block;
+    margin-top:10px;  
+}
+
+#rodape
+{
+    position: relative;
+	display? block;
+    background-color: #f09942;
+    width: 100%;
+	height: 30px;
+    left: 0;
+	bottom: 0;
+    padding: 15px 0;
+    text-align: center;
+    font-size: small;
+	float:left;
+}
+#rodape a
+{
+    color: #000;
+    text-decoration: none;
+}
+#rodape a:hover
+{
+    color: #000;
+    text-decoration: underline;
+}
+

@@ -1,0 +1,41 @@
+<script language="javascript">
+    function excluirProgresso(pro_id){
+        if(confirm('Deseja excluir o progresso?')){
+            document.location.href = '/progressos/{$progresso.PRO_ID}/excluir/';
+        }
+    }
+</script>
+    <div id="submenu">
+        <ul>            
+            <li><a href="/progressos/">Lista</a></li>
+            <li><a href="#" onclick="excluirProgresso({$progresso.PRO_ID})">Excluir</a></li>
+        </ul>
+    </div>
+    <h3>
+    Alterar progrsesso</h3>   
+    <form action="/progressos/incluir"  method="post">
+        <input type="hidden" ID="pro_id" name="pro_id" value={$progresso.PRO_ID} />
+        <input type="hidden" ID="imgBusca" name="pla_logo" value={$progresso.PRO_LOGO} />
+        <input type="hidden" ID="imgIni" name="imgIni" value="0" />   
+        <div id='conteudo' style="display: block;">   
+            <div id="prologo" class="itemForm" style="float: left; width: 200px; height: 300px">
+                <img id="imagemBusca" src={$progresso.PRO_LOGO} width="150px" />
+            </div>
+            <div class="itemForm">
+                Nome            
+                <input type="text" ID="pro_nome" name="pro_nome" value="{$progresso.PRO_NOME}" />
+            </div>            
+            <div class="itemForm">
+                <div id="resultado"></div>
+                <img ID="imgCapaJogo" Width="100px" /> 
+                <input type="Button" ID="btnCApa"  Value="Carregar imagem" OnClick="carregaImagem(document.getElementById('pla_nome').value,'logo',
+                parseInt(document.getElementById('imgIni').value)+parseInt(10));" />
+            </div>  
+        </div>   
+        <div class="command">
+            <input type="Submit" ID="btnSalvar"  Value="Salvar" OnClick="" />
+            <input type="Button" ID="btnCancelar"  Value="Cancelar"  />
+        </div>
+             
+    </form>
+
