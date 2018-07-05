@@ -1,0 +1,39 @@
+      <h3>
+    Estatísticas</h3>
+        <div id='conteudo' style="display: block; float: left;" >
+            <table border="1" class="tab">
+                <tr>
+                    <td class="tab tabh"></td>
+                    <td class="tab tabh">PS3</td>
+                    <td class="tab tabh">PS4</td>
+                    <td class="tab tabh">PSN</td>
+                    <td class="tab tabh">Switch</td>
+                    <td class="tab tabh">XBLA</td>
+                    <td class="tab tabh">Xbox</td>
+                    <td class="tab tabh">Xbox 360</td>
+                    <td class="tab tabh">Xbox One</td>
+                </tr>
+        {loop="$estatisticas"}
+                <tr>         
+                    <td class="tab">{$value.PRO_NOME}</td>
+                    <td class="tab">{$value.PS3}</td>
+                    <td class="tab">{$value.PS4}</td>
+                    <td class="tab">{$value.PSN}</td>
+                    <td class="tab">{$value.Switch}</td>
+                    <td class="tab">{$value.XBLA}</td>
+                    <td class="tab">{$value.XBOX}</td>
+                    <td class="tab">{$value.X360}</td>
+                    <td class="tab">{$value.XONE}</td>
+                </tr>
+        {/loop}
+                <tr>
+                    <td class="tab tabb">Total</td>
+        {loop="$qtd"}
+                    <td class="tab tabb">{$value.qtd}</td>
+        {/loop}
+                </tr>
+            </table> 
+        </div>
+
+    
+    
