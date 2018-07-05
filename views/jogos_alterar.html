@@ -12,7 +12,7 @@
         </ul>
     </div>
     <h3>
-    Novo jogo</h3>   
+    {$jogo.jogo_nome}</h3>   
     <form action="/jogos/incluir"  method="post">
         <input type="hidden" ID="jogo_id" name="jogo_id" value={$jogo.jogo_id} />
         <input type="hidden" ID="jogo_capa" name="jogo_capa" value={$jogo.jogo_capa} />
@@ -51,13 +51,17 @@
             </div>
             <div class="itemForm">
                 Progresso            
-                <select ID="pro_id" name="pro_id">
+                <select ID="pro_id" name="pro_id" onchange="if(this.value==4){document.getElementById('divData').style.display='block'};">
                     {loop="$progresso"}
                     <option value="{$value.PRO_ID}" {if="$value.PRO_ID == $jogo.pro_id"} selected {/if}>{$value.PRO_NOME}</option>
                     {/loop}
                 </select> 
             </div>
-            <div class="itemForm">
+            <div class="itemForm"   id="divData">
+                Data            
+                 <input type="text" ID="jogo_dt" name="jogo_dt" maxlength="10" style="width: 100px" value="{$jogo.jogo_dt}" />
+            </div>
+            <div class="itemForm" style="width: 800px">
                 <div id="resultado"></div>
                 <img ID="imgCapaJogo" Width="100px" /> 
                 <input type="Button" ID="btnCApa"  Value="Carregar capa" OnClick="carregaCapa(document.getElementById('jogo_nome').value,document.getElementById('pla_id').options[document.getElementById('pla_id').selectedIndex].text,

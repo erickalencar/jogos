@@ -23,10 +23,11 @@ class Plataforma extends Model {
 	public function save()
 	{
 		$sql = new Sql();
-		$results = $sql->select("exec erick.dbo.sp_plataforma_salvar :pla_id, :pla_nome, :pla_logo", array(
+		$results = $sql->select("exec erick.dbo.sp_plataforma_salvar :pla_id, :pla_nome, :pla_logo, :pla_sigla", array(
 			":pla_id"=>$this->getpla_id(),
 			":pla_nome"=>$this->getpla_nome(),
-			":pla_logo"=>$this->getpla_logo()			
+			":pla_logo"=>$this->getpla_logo(),
+			":pla_sigla"=>$this->getpla_sigla()			
 		));
 		$this->setData($results[0]);
 	}

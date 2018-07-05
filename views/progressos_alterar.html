@@ -12,10 +12,10 @@
         </ul>
     </div>
     <h3>
-    Alterar progrsesso</h3>   
+    Alterar progresso</h3>   
     <form action="/progressos/incluir"  method="post">
         <input type="hidden" ID="pro_id" name="pro_id" value={$progresso.PRO_ID} />
-        <input type="hidden" ID="imgBusca" name="pla_logo" value={$progresso.PRO_LOGO} />
+        <input type="hidden" ID="imgBusca" name="pro_logo" value={$progresso.PRO_LOGO} />
         <input type="hidden" ID="imgIni" name="imgIni" value="0" />   
         <div id='conteudo' style="display: block;">   
             <div id="prologo" class="itemForm" style="float: left; width: 200px; height: 300px">
@@ -28,7 +28,7 @@
             <div class="itemForm">
                 <div id="resultado"></div>
                 <img ID="imgCapaJogo" Width="100px" /> 
-                <input type="Button" ID="btnCApa"  Value="Carregar imagem" OnClick="carregaImagem(document.getElementById('pla_nome').value,'logo',
+                <input type="Button" ID="btnCApa"  Value="Carregar imagem" OnClick="carregaImagem(document.getElementById('pro_nome').value,'icon',
                 parseInt(document.getElementById('imgIni').value)+parseInt(10));" />
             </div>  
         </div>   

@@ -325,6 +325,17 @@ $app->get('/progressos/:pro_id/', function($pro_id){
     ]);
 });
 
+// ------------------------------
+//----------ESTATÍSTICAS-----------
+//-------------------------------
+
+$app->get('/estatisticas/', function(){
+	$page = new Page();
+    $page->setTpl("estatisticas", [
+    	'estatisticas'=>Jogo::estatisticas(),
+    	'qtd'=>Jogo::listQtd()    	
+    ]);
+});
 
 $app->run();
 

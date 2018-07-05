@@ -8,7 +8,7 @@
             <ul>
                 <li><div id="menuFiltros" >Filtar: <input type="text" id="txtFiltroJogo" onkeyup="carregaJogo(this.value)" /></div></li>
                 {loop="$plataformas"}
-                <li><a href="#" onclick="carregaJogo(document.getElementById('txtFiltroJogo').value,{$value.PLA_ID})"><img src={$value.PLA_LOGO} height="30px" style="margin-right: 1px" /><div id="pla_{$value.PLA_ID}" class="pla_qtd">{$value.qtd}</div></a></li>
+                <li><a href="#" onclick="carregaJogo(document.getElementById('txtFiltroJogo').value,{$value.PLA_ID})"><img src={$value.PLA_LOGO} height="30px" style="margin-right: 1px" alt="{$value.qtd}" title="{$value.qtd}" /></a></li>
                 {/loop}
             </ul>
         </div>    

@@ -23,9 +23,10 @@ class Progresso extends Model {
 	public function save()
 	{
 		$sql = new Sql();
-		$results = $sql->select("exec erick.dbo.sp_progresso_salvar :pro_id, :pro_nome", array(
+		$results = $sql->select("exec erick.dbo.sp_progresso_salvar :pro_id, :pro_nome, :pro_logo", array(
 			":pro_id"=>$this->getpro_id(),
-			":pro_nome"=>$this->getpro_nome()		
+			":pro_nome"=>$this->getpro_nome(),
+			":pro_logo"=>$this->getpro_logo()
 		));
 		$this->setData($results[0]);
 	}
