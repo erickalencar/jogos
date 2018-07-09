@@ -1,6 +1,7 @@
       <h3>
     Estatísticas</h3>
         <div id='conteudo' style="display: block; float: left;" >
+            Jogos por plataforma<br><br>
             <table border="1" class="tab">
                 <tr>
                     <td class="tab tabh"></td>
@@ -16,20 +17,40 @@
         {loop="$estatisticas"}
                 <tr>         
                     <td class="tab">{$value.PRO_NOME}</td>
-                    <td class="tab">{$value.PS3}</td>
-                    <td class="tab">{$value.PS4}</td>
-                    <td class="tab">{$value.PSN}</td>
-                    <td class="tab">{$value.Switch}</td>
-                    <td class="tab">{$value.XBLA}</td>
-                    <td class="tab">{$value.XBOX}</td>
-                    <td class="tab">{$value.X360}</td>
-                    <td class="tab">{$value.XONE}</td>
+                    <td class="tab"><a href="/jogos/filtrar/?plataforma=2&progresso={$value.PRO_ID}">{$value.PS3}</a></td>
+                    <td class="tab"><a href="/jogos/filtrar/?plataforma=7&progresso={$value.PRO_ID}">{$value.PS4}</a></td>
+                    <td class="tab"><a href="/jogos/filtrar/?plataforma=3&progresso={$value.PRO_ID}">{$value.PSN}</a></td>
+                    <td class="tab"><a href="/jogos/filtrar/?plataforma=8&progresso={$value.PRO_ID}">{$value.Switch}</a></td>
+                    <td class="tab"><a href="/jogos/filtrar/?plataforma=5&progresso={$value.PRO_ID}">{$value.XBLA}</a></td>
+                    <td class="tab"><a href="/jogos/filtrar/?plataforma=9&progresso={$value.PRO_ID}">{$value.XBOX}</a></td>
+                    <td class="tab"><a href="/jogos/filtrar/?plataforma=1&progresso={$value.PRO_ID}">{$value.X360}</a></td>
+                    <td class="tab"><a href="/jogos/filtrar/?plataforma=6&progresso={$value.PRO_ID}">{$value.XONE}</a></td>
                 </tr>
         {/loop}
                 <tr>
                     <td class="tab tabb">Total</td>
         {loop="$qtd"}
                     <td class="tab tabb">{$value.qtd}</td>
+        {/loop}
+                </tr>
+            </table> 
+        </div>        
+
+        <div id='conteudo' style="display: block; float: left;" >
+            Jogos zerados por ano<br><br>
+            <table border="1" class="tab">
+                <tr>
+                    <td class="tab tabh">Ano</td>
+        {loop="$qtdZerados"}         
+                    <td class="tab tabh">{$value.ano}</td>
+                
+        {/loop}
+                </tr>
+                <tr>
+                    <td class="tab tabh">Qtd</td>
+        {loop="$qtdZerados"}         
+                    <td class="tab"><a href="/jogos/filtrar/?ano={$value.ano}">{$value.qtd}</a></td>
+                
         {/loop}
                 </tr>
             </table> 

@@ -260,6 +260,18 @@ margin: 0;
 	color: #FFFFFF;
 }
 
+.tab a
+{
+    display: block;    
+    color: #000;
+    text-decoration: none;
+}
+.tab a:hover
+{    
+    background: #E6E6E6;
+    text-decoration: none;
+}
+
 #menuOpcoes
 {
     float:right;

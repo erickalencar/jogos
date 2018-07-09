@@ -5,7 +5,7 @@ use \Erick\Model;
 use \Erick\gisearch;
 
 class Jogo extends Model {
-	public static function listAll($nomeJogo = null, $plataforma = null)
+	public static function listAll($nomeJogo = null, $plataforma = null, $progresso = null, $ano = null)
 	{		
 		$query = "SELECT * FROM erick.dbo.jogos where 1=1 ";
 		if($nomeJogo != null){
@@ -13,6 +13,13 @@ class Jogo extends Model {
 		}
 		if($plataforma != null){
 			$query = $query . " and pla_id = " . $plataforma ;
+		}
+		if($progresso != null){
+			$query = $query . " and pro_id = " . $progresso ;
+		}
+		if($ano != null){
+			$query = $query . " and isnull(year(jogo_dt),0) = " . $ano ;
+			$query = $query . " and pro_id = 4";
 		}
 		$query = $query . " ORDER BY jogo_nome";
 		$sql = new Sql();
@@ -84,15 +91,28 @@ class Jogo extends Model {
 
 	public static function estatisticas()
 	{		
-		$query = "SELECT PRO_NOME, ISNULL([PS3],0) AS PS3,ISNULL([PS4],0) AS PS4,ISNULL([PSN],0) AS PSN,
+		$query = "SELECT PRO_NOME, PRO_ID, ISNULL([PS3],0) AS PS3,ISNULL([PS4],0) AS PS4,ISNULL([PSN],0) AS PSN,
 						ISNULL([Switch],0) AS 'Switch',ISNULL([XBLA],0) AS XBLA,ISNULL([XBOX],0) AS XBOX,
 						ISNULL([X360],0) AS X360,ISNULL([XONE],0) AS XONE
-				FROM (SELECT pr.PRO_NOME, PLA_SIGLA,  COUNT(*) AS qtd 
+				FROM (SELECT pr.PRO_NOME, j.pro_id, PLA_SIGLA,  COUNT(*) AS qtd 
 				      FROM erick.dbo.jogos j
 						INNER JOIN erick.dbo.PLATAFORMA p ON p.PLA_ID = j.pla_id
 						INNER JOIN erick.dbo.PROGRESSO pr ON pr.PRO_ID = j.pro_id
-						GROUP BY PRO_NOME, PLA_SIGLA ) sq
+						GROUP BY PRO_NOME, j.pro_id, PLA_SIGLA ) sq
 				PIVOT (SUM(qtd) FOR PLA_SIGLA IN ([PS3],[PS4],[PSN],[Switch],[XBLA],[XBOX],[X360],[XONE])) AS pt ";		
+
+		$sql = new Sql();
+		$results = $sql->select($query);
+		return $results;
+	}
+
+	public static function qtdZerados()
+	{		
+		$query = "SELECT isnull(YEAR(jogo_dt),0) ano, COUNT(*) AS qtd 
+					FROM erick.dbo.jogos 
+					WHERE pro_id = 4
+					GROUP BY YEAR(jogo_dt)
+					ORDER BY ano";		
 
 		$sql = new Sql();
 		$results = $sql->select($query);

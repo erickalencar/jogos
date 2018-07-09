@@ -70,6 +70,17 @@ $app->get('/buscarjogos/', function(){
 
 });
 
+$app->get('/jogos/filtrar/', function(){
+	$plataforma = isset($_GET['plataforma']) ? $_GET['plataforma'] : null; 
+	$progresso = isset($_GET['progresso']) ? $_GET['progresso'] : null; 
+	$ano = isset($_GET['ano']) ? $_GET['ano'] : null; 
+	$page = new Page();
+    $page->setTpl("jogos", [
+    	'jogos'=>Jogo::listAll('',$plataforma,$progresso,$ano),
+    	'plataformas'=>Jogo::listQtd()
+    ]);
+});
+
 $app->get('/jogos/incluir/', function(){	
 	$page = new Page();
     $page->setTpl("jogos_incluir", [
@@ -333,7 +344,8 @@ $app->get('/estatisticas/', function(){
 	$page = new Page();
     $page->setTpl("estatisticas", [
     	'estatisticas'=>Jogo::estatisticas(),
-    	'qtd'=>Jogo::listQtd()    	
+    	'qtd'=>Jogo::listQtd(),
+    	'qtdZerados'=>Jogo::qtdZerados()    	
     ]);
 });
 
