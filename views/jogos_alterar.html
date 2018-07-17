@@ -59,7 +59,7 @@
             </div>
             <div class="itemForm"   id="divData">
                 Data            
-                 <input type="text" ID="jogo_dt" name="jogo_dt" maxlength="10" style="width: 100px" value="{$jogo.jogo_dt}" />
+                 <input type="text" ID="jogo_dt" name="jogo_dt" maxlength="10" style="width: 100px" value={function="formatDate($jogo.jogo_dt)"} >
             </div>
             <div class="itemForm" style="width: 800px">
                 <div id="resultado"></div>

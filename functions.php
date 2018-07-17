@@ -14,6 +14,15 @@ function buscarImagem()
 	$model = new Model();
 	$model->capa();
 }
+
+function formatDate($date)
+{
+	//var_dump($date);
+	if (!$date == ''){
+		return date('d/m/Y', strtotime($date));
+	}
+}
+
 ?>
 
 
